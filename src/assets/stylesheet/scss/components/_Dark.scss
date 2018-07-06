@@ -1,0 +1,11 @@
+.cv_dark {
+    .cv-nabar-header {
+        background-color: $cv-color-green;
+    }
+
+    &.cv_navbar {
+        .title {
+            color: $black;
+        }
+    }
+}
