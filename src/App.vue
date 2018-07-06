@@ -2,7 +2,6 @@
   <div id="app">
     <Navbar :class="{cv_bright: setting.isBright, cv_dark: !setting.isBright}"/>
     <router-view/>
-    <button @click="setting.isBright = !setting.isBright">Change Theme</button>
   </div>
 </template>
 
@@ -23,3 +22,9 @@ export default {
   },
 };
 </script>
+
+<style>
+  #app {
+    min-width: 1024px;
+  }
+</style>
