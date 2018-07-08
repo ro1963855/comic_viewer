@@ -49,7 +49,9 @@
         </div>
         <div class="cv_chapter_content">
           <div class="cv_chapter_name">Chapter 1: The F2E Challenge Start!</div>
-          <div class="cv_chapter_name cv_chapter_new">Chapter 2: Todo List is Going Crazy!</div>
+          <router-link :to="{ name: 'Reader' }">
+            <div class="cv_chapter_name cv_chapter_new">Chapter 2: Todo List is Going Crazy!</div>
+          </router-link>
         </div>
       </div>
       <img class="cv_ad" src="@/assets/ad/ad-3.png">
@@ -59,6 +61,7 @@
 
 <script>
 export default {
+  prop: ['setting'],
   name: 'cv_home',
 };
 </script>

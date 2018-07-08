@@ -1,0 +1,103 @@
+.cv_reader {
+    padding: 24px;
+    .wrap {
+        min-width: 620px;
+        width: 620px;
+        > * {
+            margin-bottom: 24px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .cv_reader_header {
+        width: 35px;
+        height: 100%;
+    }
+
+    .cv_reader_subject {
+        white-space: nowrap;
+        font: $cv-font-title3;
+    }
+
+    .cv_reader_caret {
+        margin: 0 8px;
+    }
+
+    .cv_reader_selector {
+        width: 127px;
+        height: 35px;
+        border: 2px solid $black;
+        border-radius: 0;
+        color: $black;
+        font: $cv-font-subtitle;
+        &:last-child {
+            border-left: 0;
+        }
+    }
+
+    .cv_switcher_toggle {
+        border: 2px solid $black;
+        width: 48px;
+        height: 24px;
+        margin: 0 8px;
+        cursor: pointer;
+    }
+
+    .cv_switcher_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cv_switcher_btn {
+        width: 50%;
+        height: 100%;
+        &.on {
+            background-color: $black;
+        }
+
+        &.off {
+            background-color: $white;
+        }
+    }
+
+    .cv_reader_body {
+        width: 100%;
+        height: 930px;
+        background-color: $white;
+        position: relative;
+    }
+
+    .cv_page_changer {
+        height: 100%;
+        width: 80px;
+        position: absolute;
+        font-size: 43px;
+        cursor: pointer;
+        &.disabled {
+            color: $cv-color-gary3 !important;
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+    }
+
+    .cv_comic_image {
+        width: 620px;
+        img {
+            width: 620px;
+            height: 930px;
+        }
+    }
+
+    .cv_page_up {
+        left: -80px;
+    }
+    
+    .cv_page_down {
+        right: -80px;
+    }
+
+}

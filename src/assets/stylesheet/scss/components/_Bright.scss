@@ -8,4 +8,33 @@
             color: $cv-color-green;
         }
     }
+
+    &.cv_reader {
+        background-color: $cv-color-gary1;
+        .cv_reader_subject {
+            color: $black;
+        }
+
+        .cv_reader_caret {
+            color:  $cv-color-gary3;
+        }
+
+        .cv_page_changer {
+            color: $black;
+            &:hover {
+                color: $cv-color-green;
+                background-color: $black;
+            }
+        }
+
+        .cv_switcher_icon {
+            color: $black;
+        }
+
+        .cv_switcher_toggle {
+            border: 2px solid $black;
+        }
+
+    }
+
 }
