@@ -4,7 +4,9 @@
       <img class="cv_ad" src="@/assets/ad/ad-1.png">
       <div class="cv_reader_header d-flex align-items-center justify-content-between w-100">
         <div class="d-flex justify-content-center align-items-center">
-          <span class="cv_reader_subject">My Hexschool</span>
+          <router-link :to="{ name: 'Home' }" class="cv_reader_subject">
+            <span>My Hexschool</span>
+          </router-link>
           <font-awesome-icon class="cv_reader_caret" :icon="['fas', 'caret-right']"></font-awesome-icon>
           <b-form-select class="cv_reader_selector"
                           v-model="comicSetting.chapter.selected"
@@ -26,29 +28,64 @@
       <div class="cv_reader_body d-flex justify-content-center">
         <div class="cv_page_changer cv_page_up d-flex justify-content-center align-items-center"
               :class="{disabled: comicSetting.pager.selected === 0}"
-              @click="clickChangePage(-1)">
+              @click.stop="clickChangePage(-1)">
           <font-awesome-icon :icon="['fas', 'angle-left']"></font-awesome-icon>
         </div>
         <div class="cv_comic_image">
-          <img :src="`static/comics/storyboard-${comicSetting.pager.selected + 1}.png`">
+          <img :src="`static/comics/storyboard-${comicSetting.pager.selected + 1}.png`"
+                @click="isFullScreen.state = true">
         </div>
         <div class="cv_page_changer cv_page_down d-flex justify-content-center align-items-center"
               :class="{disabled: comicSetting.pager.selected === comicSetting.pager.options.length - 1}"
-              @click="clickChangePage(1)">
+              @click.stop="clickChangePage(1)">
           <font-awesome-icon :icon="['fas', 'angle-right']"></font-awesome-icon>
+        </div>
+      </div>
+      <div class="cv_reader_footer d-flex">
+        <div class="cv_comic_previewer"
+              v-for="comic in comicSetting.pager.options"
+              :key="comic.value"
+              @click="comicSetting.pager.selected = comic.value">
+          <div class="cv_previewer_page" v-if="comicSetting.pager.selected !== comic.value">
+            {{ formatNumber(comic.value + 1) }}
+          </div>
+          <div class="d-flex justify-content-center align-items-center cv_previewer_trangle"
+                v-if="comicSetting.pager.selected === comic.value">
+            <div class="cv_previewer_active_top"></div>
+          </div>
+          <div class="cv_previewer_img" :class="{active: comicSetting.pager.selected === comic.value}">
+            <img :src="`static/comics/storyboard-${comic.value + 1}.png`">
+          </div>
+        </div>
+        <div class="cv_comic_previewer d-flex align-items-end">
+          <div class="cv_previewer_nextChapter d-flex justify-content-center align-items-center">
+            <font-awesome-icon class="cv_next_page_icon"
+                                :icon="['fas', 'angle-double-right']"></font-awesome-icon>
+          </div>
         </div>
       </div>
       <img class="cv_ad" src="@/assets/ad/ad-3.png">
     </div>
+    <full-screen v-if="isFullScreen.state"
+                  :comicSetting="comicSetting"
+                  :isFullScreen="isFullScreen"></full-screen>
   </div>
 </template>
 
 <script>
+import FullScreen from '@/components/FullScreen';
+
 export default {
   name: 'cv_reader',
+  components: {
+    FullScreen,
+  },
   data() {
     return {
       setting: {},
+      isFullScreen: {
+        state: false,
+      },
       comicSetting: {
         chapter: {
           selected: 0,
@@ -67,7 +104,7 @@ export default {
             { value: 4, text: 'Page 5' },
             { value: 5, text: 'Page 6' },
             { value: 6, text: 'Page 7' },
-            { value: 6, text: 'Page 8' },
+            { value: 7, text: 'Page 8' },
             { value: 8, text: 'Page 9' },
             { value: 9, text: 'Page 10' },
             { value: 10, text: 'Page 11' },
@@ -103,6 +140,16 @@ export default {
       }
 
       this.comicSetting.pager.selected = this.comicSetting.pager.selected + offset;
+    },
+    formatNumber(number) {
+      let result = '';
+      if (number < 10) {
+        result = `0${number}`;
+      } else {
+        result = `${number}`;
+      }
+
+      return result;
     },
   },
   created() {

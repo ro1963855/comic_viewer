@@ -1,0 +1,51 @@
+.cv_full_screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $cv-color-gary2;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    .cv_full_screen_wrap {
+        width: 960px;
+        height: 1200px;
+        margin: 32px;
+    }
+
+    .cv_full_img {
+        width: 800px;
+        height: 100%;
+        background-color: $white;
+        position: relative;
+    }
+
+    .cv_cancel_full {
+        position: absolute;
+        top: 11px;
+        right: 11px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .cv_full_pager {
+        width: 80px;
+        height: 100%;
+        color: white;
+        &:hover {
+            background-color: $cv-color-green;
+            cursor: pointer;
+            color: $black;
+        }
+
+        &.disabled {
+            color: $cv-color-gary3 !important;
+            &:hover {
+                cursor: not-allowed;
+            }        
+        }
+    }
+
+    .cv_full_pager_icon {
+        font-size: 44px;
+    }
+}

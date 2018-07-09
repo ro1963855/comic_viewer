@@ -19,6 +19,9 @@
     .cv_reader_subject {
         white-space: nowrap;
         font: $cv-font-title3;
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     .cv_reader_caret {
@@ -89,6 +92,7 @@
         img {
             width: 620px;
             height: 930px;
+            cursor: pointer;
         }
     }
 
@@ -98,6 +102,67 @@
     
     .cv_page_down {
         right: -80px;
+    }
+
+    .cv_reader_footer {
+        width: 620px;
+        overflow: scroll;
+        overflow-y: hidden;
+    }
+
+    .cv_comic_previewer {
+        margin-right: 20px;
+        margin-bottom: 16px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .cv_previewer_trangle {
+        height: 20px;
+        .cv_previewer_active_top {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            margin-top: auto;
+        }
+    }
+
+    .cv_previewer_page {
+        font: $cv-font-lable;
+        text-align: center;
+        line-height: 20px;
+        height: 20px;
+    }
+
+    .cv_previewer_img {
+        border: 3px transparent solid;
+        cursor: pointer;
+        &.active {
+            border: 3px $black solid;
+            padding: 0;
+        }
+
+        img {
+            width: 80px;
+            height: 120px;
+        }
+    }
+
+    .cv_previewer_nextChapter {
+        width: 50px;
+        height: 120px;
+        background-color: $white;
+        margin: 3px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .cv_next_page_icon {
+        font-size: 30px;
+        color: $black;
     }
 
 }

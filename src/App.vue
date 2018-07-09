@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="position-relative">
     <Navbar :class="{cv_bright: setting.isBright, cv_dark: !setting.isBright}"/>
     <router-view :class="{cv_bright: setting.isBright, cv_dark: !setting.isBright}"></router-view>
   </div>

@@ -6545,6 +6545,22 @@ a.text-dark:hover, a.text-dark:focus {
     color: #fff; }
   .cv_dark.cv_reader .cv_switcher_toggle {
     border: 2px solid #fff; }
+  .cv_dark.cv_reader ::-webkit-scrollbar {
+    height: 20px;
+    background-color: #000;
+    border: 4px solid #fff; }
+  .cv_dark.cv_reader ::-webkit-scrollbar-thumb {
+    border: 4px solid #fff;
+    background-color: #fff;
+    background-clip: padding-box; }
+  .cv_dark.cv_reader .cv_previewer_page {
+    color: #fff; }
+  .cv_dark.cv_reader .cv_previewer_active_top {
+    border-color: transparent transparent #50FF44; }
+  .cv_dark.cv_reader .cv_previewer_img.active {
+    border: 3px #50FF44 solid; }
+  .cv_dark.cv_reader .cv_previewer_nextChapter:hover {
+    background-color: #50FF44; }
 
 .cv_bright .cv-nabar-header {
   background-color: #000; }
@@ -6567,6 +6583,20 @@ a.text-dark:hover, a.text-dark:focus {
     color: #000; }
   .cv_bright.cv_reader .cv_switcher_toggle {
     border: 2px solid #000; }
+  .cv_bright.cv_reader ::-webkit-scrollbar {
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #000; }
+  .cv_bright.cv_reader ::-webkit-scrollbar-thumb {
+    border: 4px solid #000;
+    background-color: #000;
+    background-clip: padding-box; }
+  .cv_bright.cv_reader .cv_previewer_page {
+    color: #000; }
+  .cv_bright.cv_reader .cv_previewer_active_top {
+    border-color: transparent transparent #000; }
+  .cv_bright.cv_reader .cv_previewer_img.active {
+    border: 3px #000 solid; }
 
 .cv_home {
   padding: 24px;
@@ -6679,6 +6709,8 @@ a.text-dark:hover, a.text-dark:focus {
   .cv_reader .cv_reader_subject {
     white-space: nowrap;
     font: normal bold 20px "Roboto Medium", sans-serif; }
+    .cv_reader .cv_reader_subject:hover {
+      text-decoration: none; }
   .cv_reader .cv_reader_caret {
     margin: 0 8px; }
   .cv_reader .cv_reader_selector {
@@ -6725,8 +6757,88 @@ a.text-dark:hover, a.text-dark:focus {
     width: 620px; }
     .cv_reader .cv_comic_image img {
       width: 620px;
-      height: 930px; }
+      height: 930px;
+      cursor: pointer; }
   .cv_reader .cv_page_up {
     left: -80px; }
   .cv_reader .cv_page_down {
     right: -80px; }
+  .cv_reader .cv_reader_footer {
+    width: 620px;
+    overflow: scroll;
+    overflow-y: hidden; }
+  .cv_reader .cv_comic_previewer {
+    margin-right: 20px;
+    margin-bottom: 16px; }
+    .cv_reader .cv_comic_previewer:last-child {
+      margin-right: 0; }
+  .cv_reader .cv_previewer_trangle {
+    height: 20px; }
+    .cv_reader .cv_previewer_trangle .cv_previewer_active_top {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      margin-top: auto; }
+  .cv_reader .cv_previewer_page {
+    font: normal bold 14px "Roboto Bold", sans-serif;
+    text-align: center;
+    line-height: 20px;
+    height: 20px; }
+  .cv_reader .cv_previewer_img {
+    border: 3px transparent solid;
+    cursor: pointer; }
+    .cv_reader .cv_previewer_img.active {
+      border: 3px #000 solid;
+      padding: 0; }
+    .cv_reader .cv_previewer_img img {
+      width: 80px;
+      height: 120px; }
+  .cv_reader .cv_previewer_nextChapter {
+    width: 50px;
+    height: 120px;
+    background-color: #fff;
+    margin: 3px; }
+    .cv_reader .cv_previewer_nextChapter:hover {
+      cursor: pointer; }
+  .cv_reader .cv_next_page_icon {
+    font-size: 30px;
+    color: #000; }
+
+.cv_full_screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  top: 0;
+  left: 0; }
+  .cv_full_screen .cv_full_screen_wrap {
+    width: 960px;
+    height: 1200px;
+    margin: 32px; }
+  .cv_full_screen .cv_full_img {
+    width: 800px;
+    height: 100%;
+    background-color: #fff;
+    position: relative; }
+  .cv_full_screen .cv_cancel_full {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    font-size: 32px;
+    cursor: pointer; }
+  .cv_full_screen .cv_full_pager {
+    width: 80px;
+    height: 100%;
+    color: white; }
+    .cv_full_screen .cv_full_pager:hover {
+      background-color: #50FF44;
+      cursor: pointer;
+      color: #000; }
+    .cv_full_screen .cv_full_pager.disabled {
+      color: #d9d9d9 !important; }
+      .cv_full_screen .cv_full_pager.disabled:hover {
+        cursor: not-allowed; }
+  .cv_full_screen .cv_full_pager_icon {
+    font-size: 44px; }

@@ -35,6 +35,32 @@
             border: 2px solid $black;
         }
 
+        ::-webkit-scrollbar {
+            height: 20px;
+            background-color: $white;
+            border: 4px solid $black;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border: 4px solid $black;
+            background-color: $black;
+            background-clip: padding-box;
+        }
+
+        .cv_previewer_page {
+            color: $black;
+        }
+
+        .cv_previewer_active_top {
+            border-color: transparent transparent $black;
+        }
+
+        .cv_previewer_img {
+            &.active {
+                border: 3px $black solid;
+            }
+        }
+        
     }
 
 }
