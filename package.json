@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "heroku-postinstall": "npm install && npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",

@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'comic-viewer-dandy.herokuapp.com/',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps
